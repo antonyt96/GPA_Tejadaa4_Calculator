@@ -22,7 +22,7 @@
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toEndOf="@+id/C_H5"
         app:layout_constraintTop_toBottomOf="@+id/L_G4"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/L_G4"
@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toEndOf="@+id/C_H4"
         app:layout_constraintTop_toBottomOf="@+id/L_G3"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/C_H5"
@@ -54,7 +54,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/c5"
         app:layout_constraintTop_toBottomOf="@+id/C_H4"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <TextView
         android:id="@+id/c5"
@@ -90,7 +90,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/c4"
         app:layout_constraintTop_toBottomOf="@+id/C_H3"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <TextView
         android:id="@+id/c4"
@@ -119,7 +119,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/C_H3"
         app:layout_constraintTop_toBottomOf="@+id/L_G2"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/C_H3"
@@ -133,7 +133,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/c3"
         app:layout_constraintTop_toBottomOf="@+id/C_H2"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/L_G2"
@@ -151,7 +151,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/C_H2"
         app:layout_constraintTop_toBottomOf="@+id/L_G1"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/C_H2"
@@ -165,7 +165,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/c2"
         app:layout_constraintTop_toBottomOf="@+id/C_H1"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <TextView
         android:id="@+id/c2"
@@ -200,12 +200,12 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="@string/credit_hours"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/L_G1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/c1"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/L_G1"
@@ -222,7 +222,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/C_H1"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <Button
         android:id="@+id/button"
@@ -233,10 +233,26 @@
         android:layout_marginTop="78dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="calculateGPA"
         android:text="@string/compute_gpa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/C_H5" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginRight="175dp"
+        android:layout_marginBottom="119dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </android.support.constraint.ConstraintLayout>
