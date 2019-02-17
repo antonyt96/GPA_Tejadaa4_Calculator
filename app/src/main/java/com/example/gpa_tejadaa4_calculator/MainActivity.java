@@ -1,5 +1,6 @@
 package com.example.gpa_tejadaa4_calculator;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,13 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText ch1,ch2,ch3,ch4,ch5;
     private EditText g1,g2,g3,g4,g5;
     private Button gpa_calc;
     private TextView result;
-    Double final =0;
+    private ConstraintLayout currentLayout;
     /*
     private int credit_sum = 0;
     private int grade_sum = 0;
@@ -23,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Credit Hours
         ch1 = (EditText)findViewById(R.id.C_H1);
         ch2 = (EditText)findViewById(R.id.C_H2);
@@ -40,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Button
         gpa_calc = (Button) findViewById(R.id.button);
-        //Result
-        result = (TextView)findViewById(R.id.result);
 
+        currentLayout = (ConstraintLayout)findViewById(R.id.main_layout);
+        //Result
+        result = (TextView)findViewById(R.id.gparesult);
         gpa_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 calculateGPA();
+
             }
         });
     }
@@ -100,7 +104,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         gpa = (quality_points/credit_sum);
-        String str = Double.toString(gpa);
+        DecimalFormat num = new DecimalFormat("#0.00");
+        num.format(gpa);
+
+        if (gpa == 0.0){currentLayout.setBackgroundColor(getResources().getColor(R.color.bad));}
+        else if (gpa > 0.0 && gpa <= 2.3){currentLayout.setBackgroundColor(getResources().getColor(R.color.good));}
+        else if (gpa > 2.3 && gpa <= 4.0){currentLayout.setBackgroundColor(getResources().getColor(R.color.great));}
+
+        String str = String.valueOf(gpa);
         result.setText(str);
     }
 }
