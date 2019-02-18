@@ -7,5 +7,5 @@
     <string name="course_5">Course #5</string>
     <string name="compute_gpa">Compute GPA</string>
     <string name="credit_hours">Credit Hours</string>
-    <string name="Grade">Letter Grade</string>
+    <string name="Grade">A, B, C, D, F</string>
 </resources>
