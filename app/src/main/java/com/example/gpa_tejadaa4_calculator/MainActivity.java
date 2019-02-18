@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculateGPA() {
 
+        gpa_calc.setTextColor(getResources().getColor(R.color.transparent));
         double quality_points = 0;
         double credit_sum = 0;
         double gpa=0;
@@ -132,23 +133,6 @@ public class MainActivity extends AppCompatActivity {
         double[] creditArray = new double[]{chour1, chour2, chour3, chour4, chour5};
         String[] gradeArray = new String[]{l1,l2,l3,l4,l5};
 
-       /* for(int i =0 ; i <creditArray.length; i++){
-
-            if (creditArray[i] == 0){
-
-                return;
-            }
-        }
-
-        for(int i =0 ; i <gradeArray.length; i++){
-
-            if (gradeArray[i].isEmpty()){
-
-                return;
-            }
-        }
-        */
-
         credit_sum = chour1+chour2+chour3+chour4+chour5;
         //quality points calculation
         for(int i=0; i<gradeArray.length; i++){
@@ -177,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         gpa = (quality_points/credit_sum);
-        DecimalFormat num = new DecimalFormat("#0.00");
+        DecimalFormat num = new DecimalFormat("#.##");
         num.format(gpa);
 
         if (gpa == 0.0){currentLayout.setBackgroundColor(getResources().getColor(R.color.bad));}
